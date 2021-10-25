@@ -42,6 +42,14 @@ public class MainDePrueba {
                 .year("2017")
                 .build();
 
+        Song s2 = Song.builder()
+                .artist(a)
+                .title("Dangerously")
+                .album("Nine tracks")
+                .year("2017")
+                .build();
+
+
         Playlist p = Playlist.builder()
                 .name("Playlist 1")
                 .description("Playlist de canciones")
@@ -53,20 +61,14 @@ public class MainDePrueba {
                 .build();
 
         s.addArtist(a);
+        s2.addArtist(a);
 
-
-
-        addedToService.AddSongToPlaylist(s, p);
         artistService.save(a);
         songService.save(s);
+        songService.save(s2);
         playlistService.save(p);
-
-
-
-
-
-
-
+        addedToService.AddSongToPlaylist(s, p);
+        addedToService.AddSongToPlaylist(s2, p);
 
 
     }
