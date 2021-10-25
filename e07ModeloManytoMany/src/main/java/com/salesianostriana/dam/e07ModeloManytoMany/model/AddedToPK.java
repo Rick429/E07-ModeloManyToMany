@@ -12,9 +12,9 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter @Setter
-
 public class AddedToPK implements Serializable {
 
-    private Long Song_id;
-    private Long Playlist_id;
+    private Long song_id;
+
+    private Long playlist_id;
 }

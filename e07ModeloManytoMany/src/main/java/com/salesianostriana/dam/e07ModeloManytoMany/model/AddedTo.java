@@ -15,8 +15,7 @@ public class AddedTo implements Serializable {
     @Builder.Default
     @EmbeddedId
     private AddedToPK id = new AddedToPK();
-    private LocalDateTime dateTime;
-    private int order;
+
 
     @ManyToOne
     @MapsId("song_id")
@@ -28,6 +27,9 @@ public class AddedTo implements Serializable {
     @JoinColumn(name = "playlist_id")
     private Playlist playlist;
 
+
+    private String dateTime;
+    private int orden;
     /*
         HELPERS
      */
