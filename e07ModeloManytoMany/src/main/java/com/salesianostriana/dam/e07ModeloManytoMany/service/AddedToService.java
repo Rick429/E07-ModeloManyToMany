@@ -21,6 +21,7 @@ public class AddedToService extends BaseService<AddedTo, AddedToPK, AddedToRepos
                 .dateTime(LocalDateTime.now())
                 .build();
 
+        a.setOrder(a.getPlaylist().getAddedTo().size());
         save(a);
 
      return a;

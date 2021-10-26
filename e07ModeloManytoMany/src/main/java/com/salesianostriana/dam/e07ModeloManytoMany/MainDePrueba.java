@@ -55,6 +55,11 @@ public class MainDePrueba {
                 .description("Playlist de canciones")
                 .build();
 
+        Playlist p2 = Playlist.builder()
+                .name("Playlist 2")
+                .description("Playlist 2")
+                .build();
+
         AddedTo ad = AddedTo.builder()
                 .song(s)
                 .playlist(p)
@@ -63,12 +68,26 @@ public class MainDePrueba {
         s.addArtist(a);
         s2.addArtist(a);
 
+
         artistService.save(a);
         songService.save(s);
         songService.save(s2);
         playlistService.save(p);
+        playlistService.save(p2);
+
+        ad.addPlaylistSong(p, s);
         addedToService.AddSongToPlaylist(s, p);
+
+        ad.addPlaylistSong(p, s2);
         addedToService.AddSongToPlaylist(s2, p);
+
+        ad.addPlaylistSong(p2,s);
+        addedToService.AddSongToPlaylist(s, p2);
+
+
+
+
+        System.out.println(p.getAddedTo().size());
 
 
     }
