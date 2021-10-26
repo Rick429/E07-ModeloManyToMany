@@ -18,7 +18,7 @@ public class AddedToService extends BaseService<AddedTo, AddedToPK, AddedToRepos
         AddedTo a = AddedTo.builder()
                 .song(s)
                 .playlist(p)
-                .dateTime(LocalDateTime.now().toString())
+                .dateTime(LocalDateTime.now())
                 .build();
 
         save(a);
