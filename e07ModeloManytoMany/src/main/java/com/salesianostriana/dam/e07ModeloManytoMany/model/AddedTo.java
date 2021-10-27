@@ -18,7 +18,7 @@ public class AddedTo implements Serializable {
 
 
     @ManyToOne
-    @MapsId("song_id")
+    @MapsId("song_id") //lo asocia a una columna ya existente y no se cree una nueva
     @JoinColumn(name = "song_id")
     private Song song;
 
